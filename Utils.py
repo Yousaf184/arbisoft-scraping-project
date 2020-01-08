@@ -6,7 +6,7 @@ from collections import Counter
 class Utils:
     # save scrapped articles in json file
     @classmethod
-    def save_to_file(cls, articles):
+    def save_to_file(cls, articles, filename):
         articles_list = []
 
         # add articles as dictionaries in a list
@@ -18,9 +18,11 @@ class Utils:
                 'tags': article.get_tags()
             })
 
-        file = open('articles1.json', 'w')
+        file = open(filename, 'w')
         json.dump(articles_list, file, indent=4)
         file.close()
+
+        Utils.draw_charts(filename)
 
     @classmethod
     def read_file(cls, filename):
