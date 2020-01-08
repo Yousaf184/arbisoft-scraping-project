@@ -63,4 +63,4 @@ class ArticleListParser:
             print(f'loading page no: {no_of_page_downs}')
             show_more_btn = browser.find_element_by_id(ArticleSelectors.SHOW_MORE_BTN_ID)
             browser.execute_script("arguments[0].click();", show_more_btn)
-            no_of_page_downs -= 1
+            no_of_page_downs += 1
