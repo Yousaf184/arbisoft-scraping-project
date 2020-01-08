@@ -34,7 +34,7 @@ class ArticleListParser:
         article_counter = 1
 
         for article in articles:
-            if article_counter % 3 == 0:
+            if article_counter % 5 == 0:
                 time.sleep(3)
 
             print(f'scraping article no: {article_counter}')
